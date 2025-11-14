@@ -6,6 +6,64 @@
     <title>Mundo de las Tortugas 🐢</title>
     <link rel="stylesheet" href="style-tortugas.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="extensiones-opcionales.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos adicionales para la demo */
+        .demo-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .demo-title {
+            font-size: 28px;
+            color: #173b6c;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .demo-description {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        
+        .demo-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .demo-btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .demo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .code-block {
+            background: #f5f8fd;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #149ddd;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+    </style>
 </head>
 <body>
     <!-- Sidebar Navigation -->
@@ -21,6 +79,12 @@
             <li><a href="#alimentacion" class="nav-link"><i class="fas fa-leaf"></i> <span>Alimentación</span></a></li>
             <li><a href="#reproduccion" class="nav-link"><i class="fas fa-egg"></i> <span>Reproducción</span></a></li>
             <li><a href="#conservacion" class="nav-link"><i class="fas fa-shield-alt"></i> <span>Conservación</span></a></li>
+            <li><a href="#toasts" class="nav-link active"><i class="fas fa-bell"></i> <span>Notificaciones</span></a></li>
+            <li><a href="#tabs" class="nav-link"><i class="fas fa-folder"></i> <span>Tabs</span></a></li>
+            <li><a href="#accordion" class="nav-link"><i class="fas fa-list"></i> <span>Accordion</span></a></li>
+            <li><a href="#gallery" class="nav-link"><i class="fas fa-images"></i> <span>Galería</span></a></li>
+            <li><a href="#stats" class="nav-link"><i class="fas fa-chart-bar"></i> <span>Estadísticas</span></a></li>
+            <li><a href="#social" class="nav-link"><i class="fas fa-share-alt"></i> <span>Compartir</span></a></li>
         </ul>
     </nav>
 
@@ -373,6 +437,232 @@
                 </div>
             </div>
         </section>
+        <!-- Hero Demo -->
+        <section id="hero">
+            <div class="hero-container">
+                <h1>Extensiones Opcionales</h1>
+                <p>Prueba todas las <span class="typed-text">funcionalidades adicionales</span></p>
+                <div class="hero-icons">
+                    <span>🎨</span>
+                    <span>✨</span>
+                    <span>🚀</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toasts Demo -->
+        <section id="toasts" class="demo-section">
+            <div class="container">
+                <h2 class="demo-title">1. Sistema de Notificaciones (Toast)</h2>
+                <p class="demo-description">Muestra mensajes temporales al usuario</p>
+                
+                <div class="demo-buttons">
+                    <button class="demo-btn" onclick="showToast('¡Operación exitosa!', 'success')">
+                        <i class="fas fa-check"></i> Success
+                    </button>
+                    <button class="demo-btn" onclick="showToast('Ha ocurrido un error', 'error')">
+                        <i class="fas fa-times"></i> Error
+                    </button>
+                    <button class="demo-btn" onclick="showToast('Información importante', 'info')">
+                        <i class="fas fa-info"></i> Info
+                    </button>
+                </div>
+
+                <div class="code-block">
+                    <code>showToast('Mensaje aquí', 'success');</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabs Demo -->
+        <section id="tabs" class="demo-section bg-light">
+            <div class="container">
+                <h2 class="demo-title">2. Sistema de Pestañas (Tabs)</h2>
+                <p class="demo-description">Organiza contenido en pestañas navegables</p>
+
+                <div class="tabs-container">
+                    <div class="tabs-header">
+                        <button class="tab-button active" data-tab="tab1">
+                            <i class="fas fa-home"></i> Tab 1
+                        </button>
+                        <button class="tab-button" data-tab="tab2">
+                            <i class="fas fa-user"></i> Tab 2
+                        </button>
+                        <button class="tab-button" data-tab="tab3">
+                            <i class="fas fa-cog"></i> Tab 3
+                        </button>
+                    </div>
+
+                    <div id="tab1" class="tab-content active">
+                        <div style="background: white; padding: 30px; border-radius: 10px;">
+                            <h3>Contenido del Tab 1</h3>
+                            <p>Este es el contenido de la primera pestaña. Puedes agregar cualquier cosa aquí: texto, imágenes, formularios, etc.</p>
+                        </div>
+                    </div>
+
+                    <div id="tab2" class="tab-content">
+                        <div style="background: white; padding: 30px; border-radius: 10px;">
+                            <h3>Contenido del Tab 2</h3>
+                            <p>Segunda pestaña con diferente contenido. Las pestañas son útiles para organizar información relacionada.</p>
+                        </div>
+                    </div>
+
+                    <div id="tab3" class="tab-content">
+                        <div style="background: white; padding: 30px; border-radius: 10px;">
+                            <h3>Contenido del Tab 3</h3>
+                            <p>Tercera pestaña. Puedes tener tantas pestañas como necesites para tu proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accordion Demo -->
+        <section id="accordion" class="demo-section">
+            <div class="container">
+                <h2 class="demo-title">3. Acordeón</h2>
+                <p class="demo-description">Expande y colapsa secciones de contenido</p>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>¿Qué son las tortugas?</h4>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Las tortugas son reptiles del orden Testudines, caracterizados por tener un caparazón que protege sus órganos internos. Existen más de 300 especies de tortugas en el mundo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>¿Cuánto viven las tortugas?</h4>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Las tortugas son conocidas por su longevidad. Algunas especies pueden vivir más de 100 años. La tortuga gigante de las Galápagos puede vivir hasta 150 años o más.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>¿Dónde viven las tortugas?</h4>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                Las tortugas habitan en diversos ecosistemas alrededor del mundo, desde océanos y ríos hasta bosques y desiertos. Cada especie está adaptada a su entorno específico.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Demo -->
+        <section id="gallery" class="demo-section bg-light">
+            <div class="container">
+                <h2 class="demo-title">4. Galería con Lightbox</h2>
+                <p class="demo-description">Haz clic en las imágenes para verlas en tamaño completo</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400" alt="Tortuga 1">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1555169062-013468b47731?w=400" alt="Tortuga 2">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=400" alt="Tortuga 3">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=400" alt="Tortuga 4">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Demo -->
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <h2 class="demo-title" style="color: white;">5. Contador de Estadísticas</h2>
+                <p class="demo-description" style="color: rgba(255,255,255,0.9);">Los números se animan al hacer scroll</p>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-icon">🐢</div>
+                        <span class="stat-number" data-target="356">0</span>
+                        <div class="stat-label">Especies de Tortugas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🌍</div>
+                        <span class="stat-number" data-target="250">0</span>
+                        <div class="stat-label">Millones de Años</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">⚠️</div>
+                        <span class="stat-number" data-target="129">0</span>
+                        <div class="stat-label">Especies en Peligro</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">💯</div>
+                        <span class="stat-number" data-target="150">0</span>
+                        <div class="stat-label">Años de Vida</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Share Demo -->
+        <section id="social" class="demo-section">
+            <div class="container">
+                <h2 class="demo-title">6. Botones de Compartir</h2>
+                <p class="demo-description">Comparte en redes sociales</p>
+
+                <div class="social-share">
+                    <a href="#" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="social-btn email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <h3 style="margin-bottom: 20px;">Más Funciones Disponibles:</h3>
+                    <div class="demo-buttons">
+                        <button class="demo-btn" onclick="copyToClipboard(window.location.href)">
+                            <i class="fas fa-copy"></i> Copiar URL
+                        </button>
+                        <button class="demo-btn" data-tooltip="¡Esto es un tooltip!">
+                            <i class="fas fa-info"></i> Hover para Tooltip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -383,6 +673,33 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="script-tortugas.js"></script>
-</body>
+    <script src="extensiones-opcionales.js"></script>
+    <script>
+        // Inicializar extensiones para esta demo
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar tabs
+            initTabs();
+            
+            // Inicializar accordion
+            initAccordion();
+            
+            // Inicializar lightbox
+            initLightbox();
+            
+            // Inicializar contadores
+            animateCounters();
+            
+            // Inicializar botones sociales
+            initSocialShare();
+            
+            // Inicializar scroll progress
+            initScrollProgress();
+            
+            // Puedes descomentar estas si quieres:
+            // initDarkMode();
+            // initLoadingScreen();
+        });
+    </script>
 </html>
